@@ -12,6 +12,8 @@ Le répositoire contient 4 scripts en python.
 3. *annotateText.py* contient une méthode qui génère un fichier xml pour chaque fichier de texte qu'on lui fournit. Elle peut-être exécutée sur un fichier de test (dans le répertoire **test**) 
 4. *annotateMultipleFiles.py* appelle la methode définie dans *annotateText.py* pour réaliser une annotation morphosyntaxique par lot sur un ensemble de fichiers .txt d'un répertoire donné. 
 
+Le dossier **test** contient aussi un script python (*TALcollectionBastaire.py*) qui a été la première version de production d'un fichier xml (réalisé par concaténation des chaines de caractères.)
+
 La lemmatisation est réalisée grâce à la library [spacy](https://spacy.io/) de python et surtout à un pipeline appellé [Lefff](https://github.com/sammous/spacy-lefff) (Lexique des Formes Fléchies du Français), mis au point par l'equipe de l'INRIA. 
 Pour en savoir plus, veuillez lire l'article publié sur HAL par les développeurs: https://hal.inria.fr/inria-00521242/
 
