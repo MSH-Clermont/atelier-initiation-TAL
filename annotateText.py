@@ -60,7 +60,7 @@ def write_xml(inputText, outputFile):
             word.text = escape(token.text)
 
     tree = ET.ElementTree(racine)
-    tree.write(outputFile, encoding="utf8", xml_declaration=True,  default_namespace=None, method="xml")
+    tree.write(outputFile, encoding="UTF-8", xml_declaration=True,  default_namespace=None, method="xml")
 
 inputText = "test/BUCA_Bastaire_Roman_Aventures_C95455.txt"
 outputFile = "test/BUCA_Bastaire_Roman_Aventures_C95455.xml"
