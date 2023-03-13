@@ -8,7 +8,6 @@ Created on : 07/03/2023 10:11
 
 """
 
-
 from cleaning import remove_messy_char
 import xml.etree.ElementTree as ET
 from xml.sax.saxutils import escape, quoteattr
@@ -31,9 +30,10 @@ nlp.add_pipe('melt_tagger', after='parser')
 nlp.add_pipe('french_lemmatizer', after='melt_tagger')
 
 
+
 def write_xml(inputText, outputFile):
     '''
-    open a txt file, add French part of speach and lemma for each character and output a xml file
+    open a txt file, add French part of speach and lemma for each character and output an xml file
     :param inputText: .txt file
     :param outputFile: .xml file
     :return: ElementTree object with xml hierarchy : <text><w pos=pos, lefffLemma=lefffLemma, spacyLemma=spacyLemma> text <w>
@@ -62,7 +62,4 @@ def write_xml(inputText, outputFile):
     tree = ET.ElementTree(racine)
     tree.write(outputFile, encoding="UTF-8", xml_declaration=True,  default_namespace=None, method="xml")
 
-inputText = "test/BUCA_Bastaire_Roman_Aventures_C95455.txt"
-outputFile = "test/BUCA_Bastaire_Roman_Aventures_C95455.xml"
 
-write_xml(inputText, outputFile)

@@ -9,8 +9,9 @@ Le répositoire contient un répertoire nommé **corpus** qui contient 2 collect
 Le répositoire contient 4 scripts en python.
 1. *cleaning.py* contient une méthode qui permet de nettoyer les textes des caractères indésirables. 
 2. *testLemmatiseOnePhrase.py* permet de lancer les scripts de lemmatisation sur une phrase de teste. Elle appelle la méthode de nettoyage du *cleaning.py*
-3. *annotateText.py* contient une méthode qui génère un fichier xml pour chaque fichier de texte qu'on lui fournit. Elle peut-être exécutée sur un fichier de test (dans le répertoire **test**) 
-4. *annotateMultipleFiles.py* appelle la methode définie dans *annotateText.py* pour réaliser une annotation morphosyntaxique par lot sur un ensemble de fichiers .txt d'un répertoire donné. 
+3. *annotateText.py* contient une méthode qui génère un fichier xml pour chaque fichier de texte qu'on lui fournit. 
+4. *annotateMultipleFiles.py* appelle la methode *write_xml* définie dans *annotateText.py* pour réaliser une annotation morphosyntaxique par lot sur un ensemble de fichiers .txt d'un répertoire donné. 
+5. *annotateOneFile.py* appelle la méthode *write_xml* définie dans *annotateText.py* pour réaliser une annotation morphosyntaxique sur un fichier de test (place dans le répertoire **test**) 
 
 Le dossier **test** contient aussi un script python (*TALcollectionBastaire.py*) qui a été la première version de production d'un fichier xml (réalisé par concaténation des chaines de caractères.)
 
@@ -53,13 +54,13 @@ VPR	   present participle
 VS	   subjunctive verb form
 ```
 
-## Etapes à suivre pour installer les dépendances nécessaires au bon foncitonnement des scripts
+## Etapes à suivre pour installer les dépendances nécessaires au bon fonctionnement des scripts
 
 * git clone https://github.com/MSH-Clermont/atelier-initiation-TAL.git
 
 * Se placer dans le dossier créé et lancer un environnement virtuel avec les commandes suivantes :
 	* python3 -m venv env
-	* source ./env/bin/activate
+	* source ./venv/bin/activate
 
 * ecrire dans le terminal (dans le venv): pip install spacy
 * ecrire dans le terminal (dans le venv): python -m spacy download fr_core_news_sm

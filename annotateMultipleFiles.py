@@ -7,7 +7,7 @@ Author : Aurelia Vasile, MSH, UCA
 Created on : 07/03/2023 11:20
 
 """
-
+import argparse
 from annotateText import write_xml
 
 # library for fetching the path names of files
@@ -16,15 +16,29 @@ import glob
 import os
 
 
-for root, directories, files in os.walk('corpus/roman_aventure/text', topdown=False):
-    # add into a list the absolute path of text files.
-    path = glob.glob (root + "/" + "*.txt", recursive=True)
-    # for each text file
-    for fichierText in path:
-        # if the file is in .txt format
-        if os.path.isfile(fichierText):
-            # get the name without the extension .txt and add the xml extension instead
-            outputFile = fichierText[:-4] + ".xml"
+"""
+parser = argparse.ArgumentParser()
 
-            callMyFunctionThatGeneratesXML = write_xml(fichierText, outputFile)
-            print(outputFile)
+parser.add_argument("inputTextsFolder", help="dossier dans lequel se trouve tous les fichiers txt à lemmatiser. A ajouter en tant que nom de chemin")
+
+parser.add_argument("outputXmlFolder", help="dossier dans lequel seront sauvegarder les fichiers xml en sortie. A ajouter en tant que nom de chemin")
+
+args = parser.parse_args()
+
+inputTextFolder = args.inputTextsFolder
+outputXmlFolder = args.outputXmlFolder
+"""
+
+
+INPUTFOLDER = input("ajouter le chemin du dossier avec des textes")
+OUTPUFOLDER = input("ajouter le chemin des dossiers de sortie des xml")
+
+for fileText in os.listdir(INPUTFOLDER):
+
+    # for each text file
+    if fileText.endswith(".txt"):
+        # get the name without the extension .txt and add the xml extension instead
+        outputXmlFile = fileText[:-4] + ".xml"
+
+        write_xml(INPUTFOLDER+"/"+fileText, OUTPUFOLDER+"/"+outputXmlFile)
+        print(outputXmlFile)
