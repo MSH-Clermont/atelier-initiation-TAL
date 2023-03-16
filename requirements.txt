@@ -1,0 +1,2 @@
+spacy==3.5.0
+spacy_lefff==0.5.1
