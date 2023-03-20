@@ -63,7 +63,7 @@ VS	   subjunctive verb form
 
 * Se placer dans le dossier créé et lancer un environnement virtuel avec les commandes suivantes en git bash:
 
-	En windows les commandes sont suivantes:
+	En windows les commandes sont les suivantes:
 	* python -m venv venv
 	* source ./venv/Scripts/activate
 
@@ -71,7 +71,6 @@ VS	   subjunctive verb form
 	* python3 -m venv venv
 	* source ./venv/bin/activate
 
-* ecrire dans le terminal (dans le venv): pip install spacy
+* ecrire dans le terminal (dans le venv): pip install -r requirements.txt
 * ecrire dans le terminal (dans le venv): python -m spacy download fr_core_news_sm
-* ecrire dans le terminal (dans le venv): pip install spacy-lefff
 
