@@ -61,7 +61,13 @@ VS	   subjunctive verb form
 
 * git clone https://github.com/MSH-Clermont/atelier-initiation-TAL.git
 
-* Se placer dans le dossier créé et lancer un environnement virtuel avec les commandes suivantes :
+* Se placer dans le dossier créé et lancer un environnement virtuel avec les commandes suivantes en git bash:
+
+	En windows les commandes sont suivantes:
+	* python -m venv venv
+	* source ./venv/Scripts/activate
+
+	En Linux/Mac OS ce sera:
 	* python3 -m venv venv
 	* source ./venv/bin/activate
 
