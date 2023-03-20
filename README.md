@@ -62,7 +62,7 @@ VS	   subjunctive verb form
 * git clone https://github.com/MSH-Clermont/atelier-initiation-TAL.git
 
 * Se placer dans le dossier créé et lancer un environnement virtuel avec les commandes suivantes :
-	* python3 -m venv env
+	* python3 -m venv venv
 	* source ./venv/bin/activate
 
 * ecrire dans le terminal (dans le venv): pip install spacy
