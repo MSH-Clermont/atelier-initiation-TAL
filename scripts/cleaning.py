@@ -16,8 +16,8 @@ def remove_messy_char(text):
     :return: cleaned string
     '''
 
-    # replaces slanted apostrophes with straight apostrophes and line breaks with a space
-    outputText = text.replace("’", "'").replace("\n", " ")
+    # replaces slanted apostrophes with straight apostrophes, line breaks and tabulations with a space
+    outputText = text.replace("’", "'").replace("\n", " ").replace("\t", " ")
 
     # replaces odd characters with a space
     charRemoved = re.sub(r'[<>$_*■/©/{}•\\•°®\^]', ' ', outputText)
