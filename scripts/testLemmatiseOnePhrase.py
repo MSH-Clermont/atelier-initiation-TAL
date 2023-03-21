@@ -17,7 +17,7 @@ import spacy
 
 from spacy_lefff import LefffLemmatizer, POSTagger
 from spacy.language import Language
-from cleaning import remove_messy_char
+from scripts.cleaning import remove_messy_char
 
 @Language.factory('french_lemmatizer')
 def create_french_lemmatizer(nlp, name):
@@ -32,7 +32,7 @@ nlp.add_pipe('melt_tagger', after='parser')
 nlp.add_pipe('french_lemmatizer', after='melt_tagger')
 
 # test phrase
-phrase = "Que je sache. Bien qu'il soupçonnât le président, il se décida. Elle soupçonna son père." \
+phrase = "Que je sache. Bien qu'il soupçonnât le président, il se décida. Elle soupçonna son père.\n" \
          "Allons-nous < partir ^en vacances ? Y \"a-t-il\" <> un problème. ___ I	,	------- - . ....... —	" \
          "Oui !... où allons-nous? Il s'est assis sur ses genoux. " \
          "—	A toi de faire mieux. " \
@@ -54,4 +54,4 @@ for token in doc:
     spacyLemma = token.lemma_
 
     if lefffLemma is not None and pos is not None and spacyLemma is not None:
-        print("lefffLemma="+ lefffLemma + " pos="+ pos + " spacyLemma="+ spacyLemma + " token="+ token.text)
+        print(f"token={token.text: <10} pos={pos: <5} spacyLemma={spacyLemma: <10} lefffLemma={lefffLemma}")
