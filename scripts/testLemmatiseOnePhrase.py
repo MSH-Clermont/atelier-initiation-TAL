@@ -17,7 +17,7 @@ import spacy
 
 from spacy_lefff import LefffLemmatizer, POSTagger
 from spacy.language import Language
-from scripts.cleaning import remove_messy_char
+from cleaning import remove_messy_char
 
 @Language.factory('french_lemmatizer')
 def create_french_lemmatizer(nlp, name):
