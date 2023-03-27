@@ -13,7 +13,7 @@ Le répository contient un répertoire nommé **corpus** qui contient 2 collecti
 Le répository contient un répertoire nommé **scripts** qui contient 3 scripts en python.
 1. *cleaning.py* contient une méthode qui permet de nettoyer les textes des caractères indésirables. 
 2. *testLemmatiseOnePhrase.py* permet de lancer les scripts de lemmatisation sur une phrase de test. Elle appelle la méthode de nettoyage du *cleaning.py* et génère un fichier xml
-3. *annotateText.py* est le script principal qui génère un ou plusieurs fichiers xml pour chaque fichier .txt qu'on lui fournit. Le script a besoin d'un paramètre, à savoir le chemin vers le fichier .txt. Il est possible de lui donner en paramètre plusieurs fichiers .txt pour réaliser une annotation par lot. Dans ce cas-là, le chemin sera **monDossier/\*.txt**
+3. *annotateText.py* est le script principal qui génère un ou plusieurs fichiers xml pour chaque fichier .txt qu'on lui fournit. Le script a besoin d'un paramètre obligatoire, à savoir le chemin vers le fichier .txt. Il a un paramètre optionnel à savoir le chemin du dossier de sortie.
 
 Le dossier **test** contient des scripts python de test utilisés pour la première version de production des annotations.
 
@@ -61,22 +61,28 @@ VS	   subjunctive verb form
 * Dans le terminal (ou git bash), exécuter la commande
 `git clone https://github.com/MSH-Clermont/atelier-initiation-TAL.git`
 
-* Se placer dans le dossier créé et lancer un environnement virtuel avec les commandes suivantes :
-
-En windows (sur certaines machines, remplacez la commande *python* par la commande *py*) :
-
-```
-python -m venv venv
-source ./venv/Scripts/activate
-```
-
-En Linux/Mac OS ce sera:
-
-```
-python -m venv venv
-source ./venv/bin/activate
-```
-
+* Se placer dans le dossier créé et lancer un environnement virtuel avec la commande suivante (à exécuter seulement la première fois). [sur certaines machines, remplacer la commande *python* par la commande *py* ] :
+    ```
+    python -m venv venv
+    ```
+Activer l'environnement virtuel à chaque nouvelle connexion avec la commande suivante en fonction du système d'opération :
+  * Windows : 
+    ```
+    source ./venv/Scripts/activate
+    ```
+    
+  * Linux/Mac OS :
+    ```
+    source ./venv/bin/activate
+    ```
+Installation des bibliothèques python : 
 * ecrire dans le terminal (en mode venv) : `pip install -r requirements.txt`
 * ecrire dans le terminal (en mode venv) : `python -m spacy download fr_core_news_sm`
 
+## Lancer le traitement
+
+Exécuter une commande selon le modèle suivant pour annoter un fichier :
+`python annotateText.py [monFichier.txt] -o [monDossierDeSortie]`
+
+Exécuter une commande selon le modèle suivant pour annoter plusieurs fichiers :
+`python annotateText.py [monDossier]/*.txt -o [monDossierDeSortie]` 
