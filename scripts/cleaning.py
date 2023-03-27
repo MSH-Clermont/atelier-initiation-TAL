@@ -20,7 +20,7 @@ def remove_messy_char(text):
     outputText = text.replace("’", "'").replace("\n", " ").replace("\t", " ")
 
     # replaces odd characters with a space
-    charRemoved = re.sub(r'[<>$_*■/©/{}•\\•°®\^]', ' ', outputText)
+    charRemoved = re.sub(r'[<>$_*■/©/{}•\\•°✓▼►™£❖®♦„\^]', ' ', outputText)
 
     # deletes dashes that occur more than twice
     multipleLineRemoved = re.sub(r'[-]{2,}', '', charRemoved)
