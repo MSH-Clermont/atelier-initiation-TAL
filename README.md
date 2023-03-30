@@ -6,8 +6,7 @@ Ces documents sont utilisés dans le cadre de l'atelier d'initiation aux traitem
 Le répository contient un répertoire nommé **corpus** qui contient 2 collections de textes : 
 1. collection_aventure faire référence à une collection intitulée *Collection d'aventure* contenant des romans et nouvelles publiés entre 1916 et probablement 1926. Ce dossier est composé de 40 fichiers textes, dont certains contiennent plus de 300.000 mots. 
 2. roman_aventure fait référence à une collection intitulée *Petit roman d'aventure* et publiée entre 1932 et 1937. Le dossier est composé de 70 fichiers. 
-3. le dossier **xml** est le dossier contenant tous les fichiers annotés en formats xml prétraités pour l'atelier. 
-4. le fichier **metadata.csv** contient les métadonnées des deux collections (en Dubin Core) extraites depuis la bibliothèque virtuelle de l'UCA qui met à disposition les deux collections: https://bibliotheque-virtuelle.bu.uca.fr/collection-tree/browse?collection=39. Pour un usage à destination de TXM, le fichier **metadata.csv** doit être placé dans le même dossier que les fichiers xml; il doit également contenir une colonne *id* avec les identifiants des fichiers xml annotés. 
+3. le dossier **xml** est le dossier contenant tous les fichiers annotés en formats xml prétraités pour l'atelier. Dans ce dossier se trouve aussi le fichier **metadata.csv** qui contient les métadonnées des deux collections (en Dubin Core) extraites depuis la bibliothèque virtuelle de l'UCA qui met à disposition les deux collections: https://bibliotheque-virtuelle.bu.uca.fr/collection-tree/browse?collection=39. Le placement du fichier de métadonnée dans le même dossier que les fichiers xml est nécessaire pour un usage à destination de TXM; il doit également contenir une colonne *id* avec les identifiants des fichiers xml annotés. 
 
 ## Les scripts
 Le répository contient un répertoire nommé **scripts** qui contient 3 scripts en python.
@@ -61,7 +60,8 @@ VS	   subjunctive verb form
 * Dans le terminal (ou git bash), exécuter la commande
 `git clone https://github.com/MSH-Clermont/atelier-initiation-TAL.git`
 
-* Se placer dans le dossier créé et lancer un environnement virtuel avec la commande suivante (à exécuter seulement la première fois). [sur certaines machines, remplacer la commande *python* par la commande *py* ] :
+* Se placer dans le dossier créé et lancer un environnement virtuel avec la commande suivante (à exécuter seulement la première fois). 
+[sur certaines machines Windows, remplacer la commande *python* par la commande *py* et sur Mac Os remplacer la commande *python* par *python3*] :
     ```
     python -m venv venv
     ```
@@ -81,8 +81,12 @@ Installation des bibliothèques python :
 
 ## Lancer le traitement
 
-Exécuter une commande selon le modèle suivant pour annoter un fichier :
-`python annotateText.py [monFichier.txt] -o [monDossierDeSortie]`
+Exécuter une commande selon le modèle suivant pour annoter un fichier [remplacer les crochets et le contenu des crochets par le chemin correspondant à vos fichiers/dossiers] :
+```
+python annotateText.py [monFichier.txt] -o [monDossierDeSortie]
+```
 
 Exécuter une commande selon le modèle suivant pour annoter plusieurs fichiers :
-`python annotateText.py [monDossier]/*.txt -o [monDossierDeSortie]` 
+```
+python annotateText.py [monDossier]/*.txt -o [monDossierDeSortie]
+``` 
