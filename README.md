@@ -68,7 +68,7 @@ VS	   subjunctive verb form
 Activer l'environnement virtuel à chaque nouvelle connexion avec la commande suivante en fonction du système d'opération :
   * Windows : 
     ```
-    source ./venv/Scripts/activate
+    ./venv/Scripts/activate
     ```
     
   * Linux/Mac OS :
